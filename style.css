@@ -22,7 +22,7 @@
 body {
   font-family: var(--ff-base);
   font-size: var(--ff-base);
-  min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
   width: 100%;
   line-height: 1.5;
@@ -61,8 +61,10 @@ h1 {
   font-weight: var(--fw-bolder);
 }
 .container {
-  min-height: 100vh;
-  margin: 20px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .navbar {
   display: flex;
@@ -128,10 +130,7 @@ nav ul li a:hover {
   align-self: flex-start;
 }
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   margin: var(--space--my) 0px;
 }
 
@@ -180,7 +179,6 @@ nav ul li a:hover {
   padding: 25px 20px;
   gap: 20px;
   width: 100%;
-  min-height: 70vh;
   margin: var(--space--my) 0px;
 }
 .hero-new h2 {
@@ -248,8 +246,7 @@ nav ul li a:hover {
 }
 @media (min-width: 768px) {
   .container {
-    margin: 40px 80px;
-    min-height: 0vh;
+    padding: 40px 80px;
   }
 
   .ranking {
@@ -259,21 +256,15 @@ nav ul li a:hover {
     align-items: center;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
+  .container {
+    padding: 40px 200px;
+  }
   .hero {
-    display: flex;
-    flex-direction: row;
+    grid-template-columns: 2fr 1fr;
     justify-content: start;
     align-items: start;
     gap: 20px;
-  }
-
-  .hero-content {
-    flex: 1;
-  }
-  .hero-new {
-    flex: 0.4;
-    gap: 4px;
   }
 
   .hero-content-info {
