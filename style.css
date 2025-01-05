@@ -129,7 +129,7 @@ nav ul li a:hover {
 .sidebar li {
   align-self: flex-start;
 }
-.hero {
+.grid-main {
   display: grid;
   margin: var(--space--my) 0px;
 }
@@ -137,8 +137,9 @@ nav ul li a:hover {
 .hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
   margin: var(--space--my) 0px;
 }
 .hero-content img {
@@ -148,9 +149,8 @@ nav ul li a:hover {
   display: grid;
   justify-content: center;
   gap: 15px;
-  padding: 10px 0;
 }
-.hero-info-p {
+.hero-text {
   display: grid;
   gap: 20px;
 }
@@ -260,24 +260,37 @@ nav ul li a:hover {
   .container {
     padding: 40px 200px;
   }
-  .hero {
-    grid-template-columns: 2fr 1fr;
-    justify-content: start;
-    align-items: start;
-    gap: 20px;
+  .grid-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+  }
+  .hero-content {
+    gap: 0px;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .hero-content-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-
-  .hero-info-p {
+  .hero-new {
+    grid-column: 3;
+    /*ไปอยู่ตำแหน่งที่ 3*/
+  }
+  .hero-text {
     display: grid;
     gap: 20px;
     max-width: 400px;
+  }
+  .ranking {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .ranking {
     display: flex;
